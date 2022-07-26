@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: natvnsnewpipe 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: natvnsnewpipe
+  template:
+    metadata:
+      labels:
+        app: natvnsnewpipe 
+    spec:
+      containers:
+        - name: natvnsnewpipe 
+          image: containeraz1.azurecr.io/natvnsnewpipe
+          ports:
+          - containerPort: 8080
